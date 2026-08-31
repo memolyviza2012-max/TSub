@@ -1,0 +1,43 @@
+{
+  "active_profile": "Cyber Formula 1",
+  "presets": {
+    "Default": {
+      "media_title": "",
+      "media_type": "🎬 ภาพยนตร์ (Live-Action Movie)",
+      "source_language": "English",
+      "target_language": "Thai",
+      "main_prompt": "You are a Master-Level English-to-Thai Video Game and Cinematic Subtitle Specialist.\nTranslate this subtitle line. Context ID: '{id}'. Duration: {duration}s.\n\nCRITICAL SUBTITLE RULES:\n1. Natural Dialogue: Translate into fluid, spoken Thai suited for subtitles (ภาษาพูดที่เป็นธรรมชาติ กระชับ ไม่เยิ่นเย้อ).\n2. Subtitle Length & Timing: Keep the translation concise so viewers can read it in {duration} seconds. Max 2 lines.\n3. Preserve HTML/Tags: Preserve all formatting tags like <i>...</i>, <b>...</b>, <font color=\"...\"> exactly as they appear.\n4. Output Format: Return ONLY the pure Thai translation. No quotation marks, no explanations, no markdown.\n\n[GLOSSARY TO USE]\n\nOriginal Subtitle:\n{source_text}",
+      "options_prompt": "You are a Master-Level English-to-Thai Subtitle Specialist.\nTranslate this subtitle into 3 distinct cinematic styles:\n1. Natural / Conversational (ภาษาพูดธรรมชาติ พอดีคำ)\n2. Direct / Accurate (แปลตรงตามต้นฉบับ ชัดเจน)\n3. Dynamic / Punchy (กระชับ ได้อารมณ์ คมคาย)\n\nContext ID: '{id}'. Duration: {duration}s.\n[GLOSSARY TO USE]\n\nReturn ONLY a valid JSON array of 3 strings: [\"option1\", \"option2\", \"option3\"]\nOriginal Subtitle:\n{source_text}",
+      "project_lore": "",
+      "cinematic_modes": {
+        "natural": "Translate into natural, conversational, contemporary Thai dialogue (บทพูดธรรมชาติ ไหลลื่น).",
+        "gritty": "Translate into aggressive, raw, mature, or profane Thai dialogue suitable for a dark/gritty action game (ดุดัน หยาบคาย สัจนิยม).",
+        "fantasy": "Translate using medieval, archaic, or fantasy Thai dialogue with appropriate pronouns (ย้อนยุค/แฟนตาซี ข้า-เจ้า-ท่าน).",
+        "casual_slang": "Translate into modern youth slang, casual, or sarcastic tone (สแลง/กวนๆ เป็นกันเอง).",
+        "formal": "Translate into highly formal, polite, or official documentary Thai (สุภาพ/ทางการ).",
+        "poem": "Translate into rhythmic, rhyming Thai poetic verse (กลอน/บทกวี/คำสาบาน).",
+        "robotic": "Translate into cold, systemic AI / automated announcement tone (ประกาศระบบ/หุ่นยนต์)."
+      },
+      "glossary": {}
+    },
+    "Cyber Formula 1": {
+      "media_title": "Cyber Formula 1",
+      "media_type": "🎬 ภาพยนตร์ (Live-Action Movie)",
+      "source_language": "Japanese (ญี่ปุ่น)",
+      "target_language": "Thai",
+      "main_prompt": "You are a professional subtitle translator for the live-action movie 'Cyber Formula 1'. Translate the given Japanese subtitle into natural, spoken Thai that matches the energetic and inspiring tone of classic shonen anime. Use appropriate Thai pronouns for each character (e.g., ฉัน/นาย, พี่/น้อง) and preserve Japanese honorifics (e.g., -kun, -san) in Thai as 'คุง', 'ซัง' when they add meaning. Keep dialogue concise, punchy, and suitable for fast-paced racing scenes. Always output only the translated Thai text, no extra commentary. For the given subtitle, use the following context: {lore} and glossary: [GLOSSARY TO USE].\n\nSubtitle ID: {id}\nDuration: {duration}\nSource text: {source_text}",
+      "options_prompt": "You are a creative subtitle translator for 'Cyber Formula 1'. Provide three distinct Thai subtitle options for the given Japanese line, each with a different nuance: Option 1 – literal and faithful, Option 2 – natural and colloquial, Option 3 – dramatic and stylized (shonen-like). Ensure all options are in spoken Thai, appropriate for the character's personality and the scene's tone. Use the context: {lore} and glossary: [GLOSSARY TO USE]. Return a valid JSON array of exactly three strings, in the format: [\"Option 1\", \"Option 2\", \"Option 3\"].\n\nSubtitle ID: {id}\nDuration: {duration}\nSource text: {source_text}",
+      "project_lore": "เรื่องย่อ: 'Cyber Formula 1' เป็นภาพยนตร์ไลฟ์แอ็กชันที่ดัดแปลงจากอนิเมะคลาสสิก เกี่ยวกับการแข่งรถสูตรหนึ่งในอนาคตที่ใช้เทคโนโลยีไซเบอร์เนติกส์ขั้นสูง พระเอกคือ 'คาซามิ ฮายาโตะ' (คาซามิ ฮายาโตะ) หนุ่มน้อยวัย 14 ปีที่กลายเป็นนักแข่งดาวรุ่งของทีมซูกินะ (Sugina) ต้องแข่งกับคู่แข่งระดับโลกในรถ ASURADA (อาซูราเดะ) ซึ่งเป็นรถไซเบอร์ที่มีปัญญาประดิษฐ์ชื่อ 'อาซูราเดะ' ที่สื่อสารกับฮายาโตะได้ เรื่องราวเต็มไปด้วยมิตรภาพ การแข่งขัน ความท้าทาย และการเติบโตของฮายาโตะจากเด็กหนุ่มสู่แชมเปี้ยน\n\nตัวละครหลัก:\n- คาซามิ ฮายาโตะ (Kazami Hayato): พระเอก อายุ 14 ปี บุคลิกหุนหันพลันแล่น มุ่งมั่น มีความสามารถพิเศษในการขับรถ ใช้สรรพนาม 'ฉัน' (ผม) กับเพื่อน และ 'นาย' เรียกคู่แข่ง\n- อาซูราเดะ (Asurada): ปัญญาประดิษฐ์ในรถ ไม่มีเพศ แต่พูดด้วยน้ำเสียงเป็นกลาง ใช้สรรพนาม 'ฉัน' เรียกตัวเอง และเรียกฮายาโตะว่า 'ฮายาโตะ'\n- จุนน่า (Junna): เพื่อนร่วมทีมสาว อายุ 16 ปี ฉลาด อ่อนโยน ใช้สรรพนาม 'ฉัน' (หนู) เรียกตัวเอง และเรียกฮายาโตะว่า 'นาย'\n- โอซากะ (Osaka): คู่แข่งหลัก บุคลิกเย็นชา ภูมิใจ ใช้สรรพนาม 'ฉัน' (ผม) และเรียกคนอื่นว่า 'นาย' หรือ 'แก'\n- ซูกินะ (Sugina): หัวหน้าทีม ชายวัยกลางคน ใจดี แต่เข้มงวด ใช้สรรพนาม 'ฉัน' (ผม) และเรียกฮายาโตะว่า 'ไอ้หนู'\n\nคำศัพท์สำคัญ:\n- ASURADA (อาซูราเดะ): รถไซเบอร์สูตรหนึ่งรุ่นใหม่ล่าสุด มีระบบ AI ขั้นสูง\n- Cyber Formula (ไซเบอร์ฟอร์มูล่า): การแข่งรถสูตรหนึ่งในโลกอนาคตที่ใช้ระบบคอมพิวเตอร์ควบคุม\n- Boost (บูสต์): การเพิ่มความเร็วสูงสุดชั่วขณะ\n- Racing suit (ชุดแข่ง): ชุดป้องกันสำหรับนักแข่ง\n\nคำติดปาก:\n- ฮายาโตะ: 'ฉันจะชนะให้ได้!' (俺は勝つぞ!)\n- อาซูราเดะ: 'พร้อมหรือยัง ฮายาโตะ?' (準備はいいか、ハヤト)\n- โอซากะ: 'แกยังอ่อนหัดนัก' (お前はまだ青い)",
+      "cinematic_modes": {
+        "natural": "Translate into natural, conversational, contemporary Thai dialogue (บทพูดธรรมชาติ ไหลลื่น).",
+        "gritty": "Translate into aggressive, raw, mature, or profane Thai dialogue suitable for a dark/gritty action game (ดุดัน หยาบคาย สัจนิยม).",
+        "fantasy": "Translate using medieval, archaic, or fantasy Thai dialogue with appropriate pronouns (ย้อนยุค/แฟนตาซี ข้า-เจ้า-ท่าน).",
+        "casual_slang": "Translate into modern youth slang, casual, or sarcastic tone (สแลง/กวนๆ เป็นกันเอง).",
+        "formal": "Translate into highly formal, polite, or official documentary Thai (สุภาพ/ทางการ).",
+        "poem": "Translate into rhythmic, rhyming Thai poetic verse (กลอน/บทกวี/คำสาบาน).",
+        "robotic": "Translate into cold, systemic AI / automated announcement tone (ประกาศระบบ/หุ่นยนต์)."
+      },
+      "glossary": {}
+    }
+  }
+}

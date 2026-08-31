@@ -1,0 +1,11 @@
+﻿1
+00:00:01,000 --> 00:00:03,500
+Wake up, Commander! The base is under attack.
+
+2
+00:00:04,000 --> 00:00:07,200
+<i>Our planetary shields are failing. We need immediate evacuation!</i>
+
+3
+00:00:07,800 --> 00:00:11,500
+Hold the line! Protect the Core at all costs.

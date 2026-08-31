@@ -1,0 +1,13 @@
+﻿{
+  "provider": "OpenAI",
+  "model": "gpt-4o-mini",
+  "openai_key": "",
+  "deepseek_key": "",
+  "google_key": "",
+  "anthropic_key": "",
+  "base_url": "",
+  "temperature": 0.3,
+  "max_tokens": 4096,
+  "timeout": 60,
+  "last_dir": ""
+}
