@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 TSub Standalone - Dialogs & UI Components
 Settings, Profile Manager, Auto-Generator (Movies, Anime & Animation with Language Pair), Glossary Manager, and Style Options.
@@ -34,27 +34,63 @@ class SettingsDialog(QDialog):
             "OpenAI": "",
             "DeepSeek": "",
             "Google Gemini": "",
-            "Anthropic Claude": ""
+            "Anthropic Claude": "",
+            "OpenRouter": ""
         }
         self.models_by_provider = {
             "OpenAI": [
-                "gpt-5.6-luna", "gpt-5.6-sol", "gpt-5.6-terra",
-                "gpt-5.5", "gpt-5.4", "gpt-5.4-mini", "gpt-5.4-nano",
-                "gpt-4.1", "gpt-4.1-mini", "gpt-4o", "gpt-4o-mini",
-                "o4-mini", "o3-mini", "o3", "o1", "gpt-3.5-turbo"
+                "gpt-4o",
+                "gpt-4o-mini",
+                "o3-mini",
+                "o1",
+                "o1-mini",
+                "chatgpt-4o-latest",
+                "gpt-4-turbo"
             ],
             "DeepSeek": ["deepseek-chat", "deepseek-reasoner"],
-            "Google Gemini": ["gemini-2.5-flash", "gemini-2.5-pro", "gemini-3-flash", "gemini-3.5-flash", "gemini-3.5-pro"],
-            "Anthropic Claude": ["claude-3-7-sonnet", "claude-3-5-sonnet", "claude-3-5-haiku", "claude-3-opus"],
-            "Local LLM": ["custom-local-llm"]
+            "Google Gemini": [
+                "gemini-2.0-flash",
+                "gemini-2.0-flash-thinking-exp-01-21",
+                "gemini-2.0-pro-exp-02-05",
+                "gemini-1.5-pro",
+                "gemini-1.5-flash",
+                "gemini-2.5-pro",
+                "gemini-2.5-flash"
+            ],
+            "Anthropic Claude": [
+                "claude-3-7-sonnet-20250219",
+                "claude-3-5-sonnet-20241022",
+                "claude-3-5-haiku-20241022",
+                "claude-3-opus-20240229"
+            ],
+            "OpenRouter": [
+                "anthropic/claude-3.7-sonnet",
+                "anthropic/claude-3.5-sonnet",
+                "deepseek/deepseek-chat",
+                "deepseek/deepseek-r1",
+                "google/gemini-2.0-flash-001",
+                "qwen/qwen-2.5-72b-instruct",
+                "meta-llama/llama-3.3-70b-instruct",
+                "openai/gpt-4o",
+                "openai/o3-mini"
+            ],
+            "Local LLM": [
+                "qwen2.5:14b",
+                "qwen2.5:32b",
+                "qwen2.5:7b",
+                "qwq:32b",
+                "deepseek-r1:14b",
+                "llama3.3:70b",
+                "custom-local-llm"
+            ]
         }
-        self.current_provider = "OpenAI"
+        self.current_provider = "DeepSeek"
 
         layout = QVBoxLayout(self)
         form = QFormLayout()
 
         self.cbo_provider = QComboBox()
-        self.cbo_provider.addItems(["OpenAI", "DeepSeek", "Google Gemini", "Anthropic Claude", "Local LLM"])
+        self.cbo_provider.addItems(["DeepSeek", "Anthropic Claude", "Google Gemini", "OpenAI", "OpenRouter", "Local LLM"])
         self.cbo_provider.currentTextChanged.connect(self.on_provider_changed)
         form.addRow("1. AI Provider:", self.cbo_provider)
 
@@ -126,9 +162,10 @@ class SettingsDialog(QDialog):
         self.api_keys["DeepSeek"] = cfg.get("deepseek_key", "")
         self.api_keys["Google Gemini"] = cfg.get("google_key", "")
         self.api_keys["Anthropic Claude"] = cfg.get("anthropic_key", "")
+        self.api_keys["OpenRouter"] = cfg.get("openrouter_key", "")
 
-        provider = cfg.get("provider", "OpenAI")
-        saved_model = cfg.get("model", "gpt-4o-mini")
+        provider = cfg.get("provider", "DeepSeek")
+        saved_model = cfg.get("model", "deepseek-chat")
 
         self.cbo_provider.blockSignals(True)
         self.cbo_provider.setCurrentText(provider)
@@ -156,6 +193,7 @@ class SettingsDialog(QDialog):
         cfg["deepseek_key"] = self.api_keys["DeepSeek"]
         cfg["google_key"] = self.api_keys["Google Gemini"]
         cfg["anthropic_key"] = self.api_keys["Anthropic Claude"]
+        cfg["openrouter_key"] = self.api_keys.get("OpenRouter", "")
         cfg["base_url"] = self.txt_base_url.text().strip()
         cfg["temperature"] = self.spn_temp.value()
         cfg["max_tokens"] = self.spn_max_tokens.value()
